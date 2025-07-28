@@ -43,6 +43,7 @@ while (running) {
     updateGame();     // Game logic and physics
     renderGame();     // Drawing everything
 }
+```
 
 ---
 
@@ -50,6 +51,7 @@ while (running) {
 
 ```cpp
 enum GameState { MENU, PLAYING, PAUSED, GAME_OVER, VICTORY };
+```
 
 Each state is rendered and processed independently to separate logic flow.
 
@@ -72,6 +74,7 @@ struct Enemy {
     float vx, vy;
     EnemyType type;
 };
+```
 
     Enemies move toward the player.
 
@@ -88,6 +91,7 @@ struct Projectile {
     SDL_Rect rect;
     float vx, vy;
 };
+```
 
 Projectiles are fired by RANGED enemies, with damage and removal upon collision or out-of-bounds.
 
@@ -105,6 +109,7 @@ void StartWave() {
         SpawnEnemy(...);
     }
 }
+```
 
 ---
 
@@ -124,6 +129,7 @@ Displays:
 
 ```cpp
 void RenderHUD(SDL_Renderer* renderer, TTF_Font* font);
+```
 
 ---
 
@@ -134,6 +140,7 @@ High scores are saved and loaded using:
 ```cpp
 void LoadHighScore();
 void SaveHighScore();
+```
 
 Stored in score.txt.
 
@@ -153,7 +160,7 @@ Make sure to link these libraries properly in your build system.
 
 ---
 
-### 🧠 Learning Reflections
+## 🧠 Learning Reflections
 
 This project helped me consolidate concepts like:
 
