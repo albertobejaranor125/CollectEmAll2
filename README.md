@@ -48,6 +48,7 @@ while (running) {
 
 ### 🧠 Game States
 
+```cpp
 enum GameState { MENU, PLAYING, PAUSED, GAME_OVER, VICTORY };
 
 Each state is rendered and processed independently to separate logic flow.
@@ -64,6 +65,7 @@ Each state is rendered and processed independently to separate logic flow.
 
 ### 💥 Enemy System
 
+```cpp
 enum EnemyType { SLOW, FAST, RANGED };
 struct Enemy {
     SDL_Rect rect;
@@ -81,6 +83,7 @@ struct Enemy {
 
 ### 📦 Projectile System
 
+```cpp
 struct Projectile {
     SDL_Rect rect;
     float vx, vy;
@@ -94,6 +97,7 @@ Projectiles are fired by RANGED enemies, with damage and removal upon collision 
 
 Waves increase difficulty over time:
 
+```cpp
 void StartWave() {
     enemies.clear();
     enemiesToSpawn = currentWave * 3;
@@ -118,6 +122,7 @@ Displays:
 
     Wave number
 
+```cpp
 void RenderHUD(SDL_Renderer* renderer, TTF_Font* font);
 
 ---
@@ -126,6 +131,7 @@ void RenderHUD(SDL_Renderer* renderer, TTF_Font* font);
 
 High scores are saved and loaded using:
 
+```cpp
 void LoadHighScore();
 void SaveHighScore();
 
