@@ -127,7 +127,7 @@ Stored in score.txt.
     SDL2_mixer
 
 Make sure to link these libraries properly in your build system.
-
+---
 🧠 Learning Reflections
 
 This project helped me consolidate concepts like:
