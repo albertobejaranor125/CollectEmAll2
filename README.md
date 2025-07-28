@@ -1,6 +1,6 @@
 # CollectEmAll2
 
-A wave-based 2D arcade minigame built in C++ using SDL2. Collect items, avoid or survive enemies with varied behaviors, and progress through increasingly difficult waves. This project is part of my learning journey in game development and programming fundamentals with C++.
+A wave-based 2D arcade minigame built in C++ using SDL2. Collect items, avoid or survive enemies with varied behaviors, and progress through increasingly difficult waves.
 
 ---
 
@@ -36,6 +36,7 @@ This project is built using a modular structure with meaningful functions to sep
 The central loop and game state manager.
 
 ### 🔁 Game Loop
+
 ```cpp
 while (running) {
     handleEvents();   // SDL input handling
@@ -43,19 +44,25 @@ while (running) {
     renderGame();     // Drawing everything
 }
 
-🧠 Game States
+---
+
+### 🧠 Game States
 
 enum GameState { MENU, PLAYING, PAUSED, GAME_OVER, VICTORY };
 
 Each state is rendered and processed independently to separate logic flow.
 
-🎮 Player Logic
+---
+
+### 🎮 Player Logic
 
     SDL_Rect playerRect handles the position and collision.
 
     Movement is processed via keyboard events (SDL_KEYDOWN).
 
-💥 Enemy System
+---
+
+### 💥 Enemy System
 
 enum EnemyType { SLOW, FAST, RANGED };
 struct Enemy {
@@ -70,7 +77,9 @@ struct Enemy {
 
     Managed with std::vector<Enemy>.
 
-📦 Projectile System
+---
+
+### 📦 Projectile System
 
 struct Projectile {
     SDL_Rect rect;
@@ -79,7 +88,9 @@ struct Projectile {
 
 Projectiles are fired by RANGED enemies, with damage and removal upon collision or out-of-bounds.
 
-♻️ Wave System
+---
+
+### ♻️ Wave System
 
 Waves increase difficulty over time:
 
@@ -91,7 +102,9 @@ void StartWave() {
     }
 }
 
-❤️ HUD Rendering
+---
+
+### ❤️ HUD Rendering
 
 Displays:
 
@@ -107,6 +120,8 @@ Displays:
 
 void RenderHUD(SDL_Renderer* renderer, TTF_Font* font);
 
+---
+
 ### 📂 File Handling
 
 High scores are saved and loaded using:
@@ -116,7 +131,9 @@ void SaveHighScore();
 
 Stored in score.txt.
 
-⚙️ Dependencies
+---
+
+### ⚙️ Dependencies
 
     SDL2
 
@@ -130,7 +147,7 @@ Make sure to link these libraries properly in your build system.
 
 ---
 
-🧠 Learning Reflections
+### 🧠 Learning Reflections
 
 This project helped me consolidate concepts like:
 
